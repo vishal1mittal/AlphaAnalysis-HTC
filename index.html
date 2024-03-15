@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Alpha Analysis</title>
+		<script
+			src="https://code.jquery.com/jquery-3.7.1.min.js"
+			integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+			crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="/getStyles/getStyles.css" />
+		<script src="/getStyles/getStyles.js"></script>
+		<script src="/js/aos.js"></script>
+	</head>
+	<body class="">
+		<div id="loader" class="bg-blue h-4 w-screen fixed z-10 left--full"></div>
+		<header effect="fade-down" class="bg-white p-xxl h-128">
+			<nav class="flex aic jcsb h-80 container">
+				<div class="flex aic jcc gap-lg">
+					<img src="/logo/logo.png" alt="" class="w-48" />
+					<p class="fw-700 fs-24 font-primary">AlphaAnalysis</p>
+				</div>
+				<p class="fw-700 fs-24 font-primary">Team Phoenix Flames</p>
+			</nav>
+		</header>
+		<section id="searchSection"
+			effect="fade-down"
+			style="height: 80vh;
+				background-color: hsla(0, 100%, 50%, 1);
+				background-image: radial-gradient(
+						at 40% 20%,
+						hsla(28, 100%, 74%, 1) 0px,
+						transparent 50%
+					),
+					radial-gradient(
+						at 80% 0%,
+						hsla(189, 100%, 56%, 1) 0px,
+						transparent 50%
+					),
+					radial-gradient(
+						at 0% 50%,
+						hsla(355, 100%, 93%, 1) 0px,
+						transparent 50%
+					),
+					radial-gradient(
+						at 80% 50%,
+						hsla(340, 100%, 76%, 1) 0px,
+						transparent 50%
+					),
+					radial-gradient(
+						at 0% 100%,
+						hsla(22, 100%, 77%, 1) 0px,
+						transparent 50%
+					),
+					radial-gradient(
+						at 80% 100%,
+						hsla(242, 100%, 70%, 1) 0px,
+						transparent 50%
+					),
+					radial-gradient(
+						at 0% 0%,
+						hsla(343, 100%, 76%, 1) 0px,
+						transparent 50%
+					);
+			"
+			class="flex aic jcfs fd-column container py-1-12 mb-64 round-sm transition-all">
+			<div id="searchContainer" class="flex aic jcsb m-lg">
+				<input
+					style="width: 30vw"
+					type="text"
+					id="searchTerm"
+					class="bg-white fs-16 txt-black p-lg h-48 round-sm mr-sm"
+					placeholder="Search for Stocks" />
+				<button
+					id="triggerSearch"
+					class="bg-blue txt-white p-lg px-xxl h-48 round-sm flex aic jcc">
+					search
+				</button>
+			</div>
+			<h5 class="txt-white">
+				Search for:
+				<a
+					onclick="placeAndSearch()"
+					class="bg-white txt-black px-lg py-sm round-sm border-2 border-transparent hover-border-blue solid"
+					>Alphabet</a
+				>
+				<a
+					onclick="placeAndSearch()"
+					class="bg-white txt-black px-lg py-sm round-sm border-2 border-transparent hover-border-blue solid"
+					>Uber</a
+				>
+				<a
+					onclick="placeAndSearch()"
+					class="bg-white txt-black px-lg py-sm round-sm border-2 border-transparent hover-border-blue solid"
+					>Tesla</a
+				>
+				<a
+					onclick="placeAndSearch()"
+					class="bg-white txt-black px-lg py-sm round-sm border-2 border-transparent hover-border-blue solid"
+					>Amazon</a
+				>
+				<a
+					onclick="placeAndSearch()"
+					class="bg-white txt-black px-lg py-sm round-sm border-2 border-transparent hover-border-blue solid"
+					>Oracle</a
+				>
+			</h5>
+			<div
+				id="similar"
+				class="flex aic fd-column w-full px-lg mt-xxl"></div>
+			<div
+				id="stocksNews"
+				class="flex aic jcsb gap-lg mt-28"
+				style="height: 40vh !important"></div>
+			<!-- 
+			<div
+				id="topTrends"
+				class="flex fd-column aifs jcfs h-full w-1-2 p-64"></div> -->
+		</section>
+
+		<section id="stockData" class="none aic jcfs fd-column container h-4-5 py-64 mb-64 bg-gray-100 round-sm transition-all">
+			<div class="flex aic jcsb gap-lg px-xxl pb-lg">
+				<div id="stockDetails" class="p-xxl h-256 border-2 solid border-gray-300 round-sm">
+					<h4>Company Information</h4>
+					<p>Company Name: <span id="cname"></span></p>
+					<p>Symbol: <span id="symbol"></span></p>
+					<p>Industry: <span id="industry"></span></p>
+					<p>Sector: <span id="sector"></span></p>
+					<p>IPO: <span id="ipo"></span></p>
+				</div>
+				<div id="previousData" class="relative h-256 w-fc flex jcsb aife gap-sm p-xxl border-2 solid border-gray-300 round-sm"></div>
+			</div>
+			<div class="flex aic jcsb gap-lg px-xxl">
+				<div id="predictedData" class="relative h-256 w-fc flex jcsb aife gap-sm p-xxl border-2 solid border-gray-300 round-sm"></div>
+				<div id="newsArticles" class="p-xxl h-256 border-2 solid border-gray-300 round-sm w-full overflow-y-scroll">
+				</div>
+			</div>
+		</section>
+		<script src="/js/stocks.js"></script>
+		<script src="/js/app.js"></script>
+	</body>
+</html>
